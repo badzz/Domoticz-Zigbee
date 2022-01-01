@@ -110,7 +110,7 @@ class App_zigate(zigpy_zigate.zigbee.application.ControllerApplication):
 
 
         # Domoticz.Log("handle_message %s" %(str(profile)))
-        if sender.nwk or sender.ieee:
+        if sender.nwk is not None or sender.ieee is not None:
             #self.log.logging("TransportZigpy", "Debug", "=====> Sender %s - %s" % (sender.nwk, sender.ieee))
             if sender.nwk:
                 addr_mode = 0x02
